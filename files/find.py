@@ -313,7 +313,7 @@ def main():
                        continue
 
                     try:
-                        st = os.stat(fsname)
+                        st = os.lstat(fsname)
                     except:
                         msg+="%s was skipped as it does not seem to be a valid file or it cannot be accessed\n" % fsname
                         continue
