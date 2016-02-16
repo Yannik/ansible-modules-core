@@ -313,7 +313,10 @@ def main():
                        continue
 
                     try:
-                        st = os.lstat(fsname)
+                        if params['follow']:
+                            st = os.lstat(fsname)
+                        else
+                            st = os.stat(fsname)
                     except:
                         msg+="%s was skipped as it does not seem to be a valid file or it cannot be accessed\n" % fsname
                         continue
